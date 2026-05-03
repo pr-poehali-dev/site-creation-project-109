@@ -4,39 +4,35 @@
 
 @layer base {
   :root {
-    --background: 0 0% 4%;
-    --foreground: 40 20% 92%;
+    --background: 222 15% 11%;
+    --foreground: 210 20% 88%;
 
-    --card: 0 0% 7%;
-    --card-foreground: 40 20% 92%;
+    --card: 222 15% 14%;
+    --card-foreground: 210 20% 88%;
 
-    --popover: 0 0% 7%;
-    --popover-foreground: 40 20% 92%;
+    --popover: 222 15% 14%;
+    --popover-foreground: 210 20% 88%;
 
-    --primary: 42 65% 65%;
-    --primary-foreground: 0 0% 4%;
+    --primary: 45 95% 55%;
+    --primary-foreground: 222 15% 8%;
 
-    --secondary: 0 0% 10%;
-    --secondary-foreground: 40 20% 92%;
+    --secondary: 222 15% 18%;
+    --secondary-foreground: 210 20% 88%;
 
-    --muted: 0 0% 12%;
-    --muted-foreground: 40 10% 55%;
+    --muted: 222 15% 17%;
+    --muted-foreground: 215 10% 52%;
 
-    --accent: 42 65% 65%;
-    --accent-foreground: 0 0% 4%;
+    --accent: 45 95% 55%;
+    --accent-foreground: 222 15% 8%;
 
-    --destructive: 0 62.8% 50%;
-    --destructive-foreground: 40 20% 92%;
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 210 20% 88%;
 
-    --border: 0 0% 16%;
-    --input: 0 0% 14%;
-    --ring: 42 65% 65%;
+    --border: 222 15% 20%;
+    --input: 222 15% 17%;
+    --ring: 45 95% 55%;
 
-    --radius: 0.125rem;
-
-    --gold: 42 65% 65%;
-    --gold-light: 42 75% 75%;
-    --gold-dark: 38 55% 45%;
+    --radius: 0.4rem;
   }
 }
 
@@ -44,195 +40,260 @@
   * {
     @apply border-border;
   }
-
   body {
     @apply bg-background text-foreground;
-    font-family: "IBM Plex Sans", sans-serif;
-    font-weight: 300;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4 {
-    font-family: "Cormorant Garamond", serif;
+    font-family: "Rubik", system-ui, sans-serif;
+    font-size: 14px;
   }
 }
 
 @layer utilities {
-  .font-display {
-    font-family: "Cormorant Garamond", serif;
-  }
-
-  .font-body {
-    font-family: "IBM Plex Sans", sans-serif;
-  }
-
-  .gold-text {
-    color: hsl(var(--gold));
-  }
-
-  .gold-gradient {
-    background: linear-gradient(
-      135deg,
-      hsl(38, 55%, 45%),
-      hsl(42, 75%, 75%),
-      hsl(38, 55%, 45%)
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .gold-border {
-    border-color: hsl(var(--gold));
-  }
-
-  .luxury-card {
-    background: linear-gradient(145deg, hsl(0, 0%, 8%), hsl(0, 0%, 6%));
-    border: 1px solid hsl(0, 0%, 14%);
-    transition: all 0.4s ease;
-  }
-
-  .luxury-card:hover {
-    border-color: hsl(var(--gold));
-    box-shadow: 0 0 40px rgba(198, 163, 89, 0.08);
-    transform: translateY(-4px);
-  }
-
-  .luxury-btn {
-    background: linear-gradient(135deg, hsl(38, 55%, 45%), hsl(42, 65%, 65%));
-    color: hsl(0, 0%, 4%);
-    font-family: "IBM Plex Sans", sans-serif;
-    font-weight: 500;
-    letter-spacing: 0.15em;
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
     text-transform: uppercase;
-    font-size: 0.7rem;
-    padding: 0.85rem 2rem;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+  .badge-yellow {
+    background: hsl(45 95% 55% / 0.18);
+    color: hsl(45, 95%, 62%);
+    border: 1px solid hsl(45 95% 55% / 0.35);
+  }
+  .badge-green {
+    background: hsl(142 70% 45% / 0.15);
+    color: hsl(142, 70%, 55%);
+    border: 1px solid hsl(142 70% 45% / 0.3);
+  }
+  .badge-red {
+    background: hsl(0 70% 55% / 0.15);
+    color: hsl(0, 70%, 65%);
+    border: 1px solid hsl(0 70% 55% / 0.3);
+  }
+  .badge-purple {
+    background: hsl(270 60% 60% / 0.15);
+    color: hsl(270, 60%, 70%);
+    border: 1px solid hsl(270 60% 60% / 0.3);
+  }
+  .badge-blue {
+    background: hsl(210 80% 55% / 0.15);
+    color: hsl(210, 80%, 65%);
+    border: 1px solid hsl(210 80% 55% / 0.3);
+  }
+
+  .counter {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .counter-dl {
+    background: hsl(210 80% 55% / 0.15);
+    color: hsl(210, 80%, 65%);
+  }
+  .counter-star {
+    background: hsl(45 95% 55% / 0.15);
+    color: hsl(45, 95%, 62%);
+  }
+
+  .row-card {
+    background: hsl(222 15% 14%);
+    border: 1px solid hsl(222 15% 20%);
+    transition:
+      border-color 0.2s,
+      background 0.2s;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+  .row-card:hover {
+    border-color: hsl(45 95% 55% / 0.5);
+    background: hsl(222 15% 16%);
+  }
+
+  .sidebar-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.15s;
+    font-size: 13px;
+  }
+  .sidebar-item:hover {
+    background: hsl(222 15% 20%);
+  }
+  .sidebar-item.active {
+    background: hsl(45 95% 55% / 0.15);
+    color: hsl(45, 95%, 62%);
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 13px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: hsl(215 10% 65%);
+    transition:
+      color 0.15s,
+      background 0.15s;
+    white-space: nowrap;
+  }
+  .nav-link:hover {
+    color: hsl(210 20% 88%);
+    background: hsl(222 15% 18%);
+  }
+  .nav-link.active {
+    color: hsl(45, 95%, 62%);
+    background: hsl(45 95% 55% / 0.1);
+  }
+
+  .btn-yellow {
+    background: hsl(45, 95%, 55%);
+    color: hsl(222 15% 8%);
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 13px;
+    transition:
+      background 0.2s,
+      transform 0.1s;
     border: none;
     cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
+    white-space: nowrap;
   }
-
-  .luxury-btn:hover {
-    box-shadow: 0 8px 30px rgba(198, 163, 89, 0.35);
+  .btn-yellow:hover {
+    background: hsl(45, 95%, 63%);
     transform: translateY(-1px);
   }
 
-  .luxury-btn-outline {
-    background: transparent;
-    color: hsl(var(--gold));
-    font-family: "IBM Plex Sans", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    font-size: 0.7rem;
-    padding: 0.75rem 1.75rem;
-    border: 1px solid hsl(var(--gold));
+  .btn-ghost {
+    background: hsl(222 15% 20%);
+    color: hsl(210 20% 80%);
+    padding: 7px 16px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 13px;
+    transition: background 0.2s;
+    border: 1px solid hsl(222 15% 25%);
     cursor: pointer;
-    transition: all 0.3s ease;
+  }
+  .btn-ghost:hover {
+    background: hsl(222 15% 24%);
   }
 
-  .luxury-btn-outline:hover {
-    background: hsl(var(--gold));
-    color: hsl(0, 0%, 4%);
+  .page-btn {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    border: 1px solid hsl(222 15% 22%);
+    background: hsl(222 15% 14%);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+    color: hsl(215 10% 65%);
+  }
+  .page-btn:hover {
+    border-color: hsl(45 95% 55% / 0.6);
+    color: hsl(45, 95%, 62%);
+  }
+  .page-btn.active {
+    background: hsl(45, 95%, 55%);
+    color: hsl(222 15% 8%);
+    border-color: transparent;
   }
 
-  .section-label {
-    font-family: "IBM Plex Sans", sans-serif;
-    font-size: 0.65rem;
-    font-weight: 400;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: hsl(var(--gold));
+  ::-webkit-scrollbar {
+    width: 6px;
   }
-
-  .divider-gold {
-    width: 60px;
-    height: 1px;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      hsl(var(--gold)),
-      transparent
-    );
+  ::-webkit-scrollbar-track {
+    background: hsl(222 15% 11%);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(222 15% 26%);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(45 95% 55% / 0.5);
   }
 
   .animate-fade-in {
-    animation: fadeIn 0.6s ease forwards;
+    animation: fadeIn 0.25s ease forwards;
   }
-
-  .animate-slide-up {
-    animation: slideUp 0.7s ease forwards;
-  }
-
-  .animate-stagger-1 {
-    animation-delay: 0.1s;
-    opacity: 0;
-  }
-  .animate-stagger-2 {
-    animation-delay: 0.2s;
-    opacity: 0;
-  }
-  .animate-stagger-3 {
-    animation-delay: 0.3s;
-    opacity: 0;
-  }
-  .animate-stagger-4 {
-    animation-delay: 0.4s;
-    opacity: 0;
-  }
-
   @keyframes fadeIn {
     from {
       opacity: 0;
+      transform: translateY(8px);
     }
     to {
       opacity: 1;
+      transform: none;
     }
   }
 
-  @keyframes slideUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  .ll-input {
+    background: hsl(222 15% 17%);
+    border: 1px solid hsl(222 15% 22%);
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 13px;
+    color: hsl(210 20% 88%);
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+  }
+  .ll-input:focus {
+    border-color: hsl(45 95% 55% / 0.6);
+  }
+  .ll-input::placeholder {
+    color: hsl(215 10% 42%);
   }
 
-  .noise-overlay {
-    position: relative;
+  .section-title {
+    font-size: 15px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: hsl(210 20% 88%);
+    margin-bottom: 12px;
   }
 
-  .noise-overlay::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 1;
+  .ll-select {
+    background: hsl(222 15% 17%);
+    border: 1px solid hsl(222 15% 22%);
+    border-radius: 6px;
+    padding: 7px 12px;
+    font-size: 13px;
+    color: hsl(210 20% 80%);
+    outline: none;
+    cursor: pointer;
+  }
+  .ll-select:focus {
+    border-color: hsl(45 95% 55% / 0.6);
   }
 
-  .scrollbar-luxury::-webkit-scrollbar {
-    width: 4px;
-  }
-  .scrollbar-luxury::-webkit-scrollbar-track {
-    background: hsl(0, 0%, 6%);
-  }
-  .scrollbar-luxury::-webkit-scrollbar-thumb {
-    background: hsl(var(--gold));
-  }
-
-  .product-tag {
-    font-size: 0.6rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    font-family: "IBM Plex Sans", sans-serif;
-    font-weight: 400;
+  .tag-count {
+    background: hsl(222 15% 22%);
+    color: hsl(215 10% 58%);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 1px 7px;
+    border-radius: 20px;
   }
 }

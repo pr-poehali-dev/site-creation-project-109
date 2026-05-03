@@ -806,12 +806,3 @@ function FaqItem({ q, a }: { q: string; a: string }) {
   );
 }
 
-function getBadgeClass(b: string) {
-  const map: Record<string, string> = {
-    "хит": "badge-red", "хит продаж": "badge-red",
-    "новинка": "badge-green", "проверено": "badge-green",
-    "эксклюзив": "badge-purple", "лимитед": "badge-blue",
-    "премиум": "badge-yellow", "топ": "badge-yellow",
-  };
-  return map[b.toLowerCase()] ?? "badge-blue";
-}
